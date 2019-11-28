@@ -1,0 +1,11 @@
+1. Creating project in current directory
+{django-admin.py startproject profiles_project .}
+
+2. A django project can have multiple apps
+{python manage.py startapp profiles_api}
+
+3. Editing setting.py in project file to enable app
+{add django_restframework, django_restframework.authtoken, myapp}
+
+4. Running django dev server
+{python manage.py runserver 0.0.0.0:8000}
