@@ -23,7 +23,7 @@ Pre-requisite command
 4. Running django dev server
 {python manage.py runserver 0.0.0.0:8000}
 
-5. Adding custom user model to use this in settings.py
+5. Adding custom user model to use this in settings.py of profiles_api
 {AUTH_USER_MODEL = 'profiles_api.UserProfile'}
 This tells django to look at our profiles API app and then find the model code user profile & use this for all
 our authentication and use registration in our project
@@ -33,3 +33,11 @@ our authentication and use registration in our project
 
 7. Running migration
 {python manage.py migrate}
+
+8. Creating superuser for administrating djangoproject
+{python manage.py createsuperuser}
+
+9. Register newly created model with django admin in admin.py of profiles_api
+{admin.site.register(models.UserProfile)}
+This tells django to register user profile model with the admin side so it makes it accessible through the admin
+interface
