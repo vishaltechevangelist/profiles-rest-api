@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
 
+
 class UserProfileManager(BaseUserManager):
     """Manager for user profiles"""
 
@@ -19,6 +20,15 @@ class UserProfileManager(BaseUserManager):
 
         return user
 
+    def create_superuser(self, email, name, password):
+        """Create new super user"""
+        user.create_user(email, name, password)
+
+        user.is_superuser = True
+        user.is_staff = True
+
+        return user
+        
 
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     """Database model for users in the system"""

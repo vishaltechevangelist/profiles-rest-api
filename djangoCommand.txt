@@ -1,3 +1,16 @@
+Pre-requisite command
+- Creating python env on local server
+{python -m venv ~/pythonenv} where all the dependencies are loaded
+
+- Activating virtual virtual env i.e pythonenv
+{source ~/pythonenv/bin/activate}
+
+- Deactivating virtual virtual env i.e pythonenv
+{deactivate}
+
+- Install project requirements by mentioning them in requirements.txt
+{pip install -r requirements.txt}
+
 1. Creating project in current directory
 {django-admin.py startproject profiles_project .}
 
@@ -9,3 +22,14 @@
 
 4. Running django dev server
 {python manage.py runserver 0.0.0.0:8000}
+
+5. Adding custom user model to use this in settings.py
+{AUTH_USER_MODEL = 'profiles_api.UserProfile'}
+This tells django to look at our profiles API app and then find the model code user profile & use this for all
+our authentication and use registration in our project
+
+6. Creating migrations file for profiles_api app
+{python manage.py makemigrations profiles_api}
+
+7. Running migration
+{python manage.py migrate}
