@@ -41,3 +41,9 @@ our authentication and use registration in our project
 {admin.site.register(models.UserProfile)}
 This tells django to register user profile model with the admin side so it makes it accessible through the admin
 interface
+
+10. Adding API view in views.py extending API view Class
+{get:"get value of an item"} ->
+
+11. Adding app urls in project URLs
+{append new url prefix in urls.py in project level and include app url conf file path}
